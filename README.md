@@ -1,15 +1,21 @@
 # My First Finetuning Project
 
-이 프로젝트는 Polyglot-ko-1.3B 모델을 커스텀 데이터셋으로 파인튜닝하는 프로젝트입니다.
+This project is about fine-tuning the Polyglot-ko-1.3B model with a custom dataset.
 
-## 설치
+## Install
 
+```sh
 pip install -r requirements.txt
+```
 
-## 학습 실행
+## Training
 
+```sh
 python src/train.py
+```
 
-## 예측 실행
+## Prediction
 
+```sh
 python src/predict.py
+```sh

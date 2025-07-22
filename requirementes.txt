@@ -1,0 +1,10 @@
+transformers
+datasets
+accelerate
+bitsandbytes
+trl
+peft
+torch
+huggingface_hub
+scipy
+python-dotenv

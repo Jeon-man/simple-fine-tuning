@@ -18,4 +18,4 @@ python src/train.py
 
 ```sh
 python src/predict.py
-```sh
+```

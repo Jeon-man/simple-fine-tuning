@@ -9,7 +9,9 @@ def main():
     model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
     
-    prompt = "### Instruction:\nHow are you?\n\n### Response:\n"
+    input_prompt = input("Input prompt: ")
+
+    prompt = f"### Instruction:\n{input_prompt}\n\n### Response:\n"
     
     print("="*30)
     print(f"Input prompt:\n{prompt}")

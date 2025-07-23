@@ -11,3 +11,5 @@ models/
 my-qlora-finetuned-model/
 
 .env
+
+venv/

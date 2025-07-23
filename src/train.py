@@ -3,8 +3,8 @@ from datasets import load_dataset
 from huggingface_hub import login
 from peft import LoraConfig
 from transformers import (AutoModelForCausalLM, AutoTokenizer,
-                          BitsAndBytesConfig, TrainingArguments)
-from trl import SFTTrainer
+                          BitsAndBytesConfig)
+from trl import SFTConfig, SFTTrainer
 
 from config import BASE_MODEL_NAME, DATASET_PATH, HF_TOKEN, MODEL_NAME
 
@@ -35,8 +35,9 @@ def main():
     tokenizer.pad_token = tokenizer.eos_token
 
     # training args
-    training_args = TrainingArguments(
+    training_args = SFTConfig(
         output_dir=MODEL_NAME,
+        max_length=512,
         num_train_epochs=3,
         per_device_train_batch_size=2,
         learning_rate=2e-4,
@@ -50,7 +51,6 @@ def main():
         model=model,
         train_dataset=raw_dataset,
         dataset_text_field="text",
-        max_seq_length=512,
         args=training_args,
         peft_config=peft_config,
         tokenizer=tokenizer,
